@@ -1,0 +1,150 @@
+﻿@page
+@model Bookstore.Pages.RegisterModel
+@{
+}
+
+<h1 class=" container col-6 text-primary justify-content-center">User Registration</h1>
+
+
+<div class="container border col-6 rounded" style="padding:30px;">
+<form method="post" enctype="multipart/form-data">
+    <div class="text-danger offset-3" asp-validation-summary="ModelOnly"></div>
+
+    <div class="form-group row">
+        <div class="col-3">
+            <b><label asp-for="users.Name"></label></b>
+        </div>
+        <div class="col-6">
+            <input class="form-control" asp-for="users.Name" /> <br />
+        </div>
+        <span asp-validation-for="users.Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-3">
+            <b><label asp-for="users.Email"></label></b>
+        </div>
+        <div class="col-6">
+            <input asp-for="users.Email" class="form-control" /> <br />
+            <span asp-validation-for="users.Email" class="text-danger"></span>
+        </div>
+    </div>
+
+    @* <div class="form-group row">
+        <div class="col-3">
+            <b><label asp-for="users.Gender"></label></b>
+        </div>
+        <div class="col-6">
+            <input asp-for="users.Gender" type="radio" name="gender" value="Male" class="form-control" />
+            <input asp-for="users.Gender" type="radio" name="gender" value="Female" class="form-control" /> <br />
+            <span asp-validation-for="users.Gender" class="text-danger"></span>
+        </div>
+    </div> *@
+
+    <div class="form-group row">
+        <div class="col-3">
+            <b><label asp-for="users.Gender" class="col-form-label col-sm-2 pt-0"></label></b>
+        </div>
+        <div class="col-6">
+            @* <select class="form-control">
+                <option value="" selected>Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>  *@
+
+            <input type="text" asp-for="users.Gender" class="form-control" /> <br />
+
+            @* <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" value="Male" checked>
+                <label class="form-check-label" asp-for="users.Gender">
+                    Male
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" value="Female">
+                <label class="form-check-label" asp-for="users.Gender">
+                    Female
+                </label>
+            </div> *@
+            <span asp-validation-for="users.Gender" class="text-danger"></span>
+            </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-3">
+            <b><label asp-for="users.Password"></label></b>
+        </div>
+        <div class="col-6">
+            <input asp-for="users.Password" type="password" class="form-control" /> <br />
+            <span asp-validation-for="users.Password"></span>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-4 offset-4">
+                <input type="submit" value="Register" class="btn btn-primary form-control" /> <br /><br />
+        </div>
+        @* <div class="col-3">
+            <a asp-page="Index" class="btn btn-danger form-control">Back to List</a> <br />
+        </div> *@
+    </div>
+    
+    <div class="col-6 form-group">
+        <p>Do you have an Account? <b>Log In <a asp-page="Index">here</a></b></p>
+    </div>
+</form>
+</div>
+
+
+
+
+@* <div class="container justify-content-center mt-3 p-2 border rounded col-6">
+    <form method="post">
+        <div class="text-danger offset-2" asp-validation-summary="ModelOnly"></div>
+        <div class="col-5 form-group row">
+            
+        </div>
+
+        <b><label asp-for="users.Name" class="form-label"></label></b>
+        <input type="password" asp-for="users.Name" class="form-control"><br />
+
+        <b><label asp-for="users.Email" class="form-label"></label></b>
+        <input type="password" asp-for="users.Email" class="form-control"><br />
+
+        
+            <b><label asp-for="users.Gender" class="col-form-label col-sm-2 pt-0"></label></b>
+            
+                <div class="form-check form-group">
+                    <input class="form-check-input" type="radio" name="gender" value="Male" checked>
+                    <label class="form-check-label" asp-for="users.Gender" >
+                        Male
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" value="Female">
+            <label class="form-check-label" asp-for="users.Gender">
+                        Female
+                    </label>
+                </div> <br />
+
+                       <div class="form-group">
+                           <b><label asp-for="users.Password" class="form-label"></label></b>
+                           <input type="password" name="ConfirmPassword" asp-for="users.Password" class="form-control" aria-describedby="passwordHelpBlock">
+                           <div id="passwordHelpBlock" class="form-text" style="font-size:10px;">
+                               Note: Your password must be 8-15 characters long, contain letters,special characters and numbers, and must not contain spaces, or emoji.
+                           </div> <br />
+                       </div>
+
+               <div class="form-group">
+                   <b><label for="Confirm Password" class="form-label">Confirm Password</label></b>
+                   <input type="password" name="ConfirmPassword" class="form-control" aria-describedby="passwordHelpBlock"><br />
+               </div>
+
+        <div class="col-5 justify-content-center">
+            <input type="submit" class="btn btn-success form-control text-white" value="Create User" />
+        </div>
+
+        <div class="col-5 justify-content-center"><a asp-page="#" class="btn btn-danger form-control">Back</a></div>
+        
+    </form>
+</div> *@

@@ -1,0 +1,58 @@
+﻿@page
+@model Bookstore.Pages.LoginModel
+@{
+}
+
+<h1 class=" container col-6 text-primary justify-content-center">Login Page</h1>
+
+
+<div class="container border col-6 rounded" style="padding:30px;">
+    <form method="post" enctype="multipart/form-data">
+        <div class="text-danger offset-3" asp-validation-summary="ModelOnly"></div>
+
+        <div class="offset-2">
+            <div class="form-group row">
+                <div class="col-3">
+                    <b><label asp-for="loginUser.Email"></label></b>
+                </div>
+                <div class="col-6">
+                    <input type="email" asp-for="loginUser.Email" class="form-control" /> <br />
+                    <span asp-validation-for="loginUser.Email" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-3">
+                    <b><label asp-for="loginUser.Password"></label></b>
+                </div>
+                <div class="col-6">
+                    <input asp-for="loginUser.Password" type="password" class="form-control" /> <br />
+                    <span asp-validation-for="loginUser.Password"></span>
+                </div>
+            </div>
+            <label>
+                <input type="checkbox" name="remember_me"> Remember Me
+            </label>
+            @* <div class="form-group">
+                <div class="form-check">
+                    <input asp-for="RememberMe" class="form-check-input" />
+                    <label class="form-check-label" asp-for="RememberMe">Remember me</label>
+                </div>
+            </div> *@
+            <div class="form-group row">
+                <div class="col-4 offset-2">
+                    <input type="submit" value="Log In" class="btn btn-success form-control" /> <br /><br />
+                </div>
+                @* <div class="col-3">
+                <a asp-page="Index" class="btn btn-danger form-control">Back to List</a>
+                </div> *@
+            </div>
+
+            <div class="col-6 form-group">
+                <p>New Here? <b>Register <a asp-page="Register">here</a></b></p>
+            </div>
+        </div>
+
+        
+    </form>
+</div>
